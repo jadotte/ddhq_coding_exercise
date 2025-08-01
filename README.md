@@ -2,7 +2,7 @@
 
 Here's my coding exercise submission. This is a simple page with a text area and a submit button that generates a png of a bar plot of the 20 most common bigrams in the submitted text. I used React and Next.js for the frontend and Python3 with Flask for the backend.
 
-Both the frontend and backend can be run locally by entering the following commands from the parent DDHQ directory.
+Both the frontend and backend can be run locally by entering the following commands from the ddhq_exercise_jadotte directory.
 
 Flask Python backend run
 > python3 flask_server/server.p
