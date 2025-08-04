@@ -65,8 +65,6 @@ class TextBlock extends React.Component {
         <button onClick={this.handle_submit} disabled = {loading}>
         {loading ? "Loading" : "Submit"}
         </button>
-        {err && <p>Error</p>}
-        {loading && <p> Loading image</p>}
         {image_url && (
         <div>
             <img
