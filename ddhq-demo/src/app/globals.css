@@ -7,23 +7,41 @@ body {
   padding: 32px;
   font-family: Arial, Helvetica, sans-serif;
 }
-.centered {
-  display: flex;
-  justify-content: center;
-  gap: 10px
-}
 
 .App-content {
   display: flex;
   justify-content: center;
-  gap: 10px
+  gap: 10px;
+  flex-direction: column;
 }
 
 textarea {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
   border: 2px solid #000;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
-  border: 2px solid #ccc;
   padding: 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
+h1 {
+  font-size: 32px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+

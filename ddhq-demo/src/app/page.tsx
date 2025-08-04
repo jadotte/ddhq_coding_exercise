@@ -10,16 +10,16 @@ export default function Home() {
       }, []);
   return (
     <>
-      <div className="centered">
-      { image_url ? (
-      <img src={image_url} alt="Bigram Histogram" width='400px'/>
-      ) : (
-       <p>Input data</p>
-       )}
-    </div>
-    <div className="App-content">
-      <TextBlock/>
-    </div>
-  </>
+      <div>
+        <head><title>DDHQ Coding Exercise</title>
+        </head>
+      </div>
+      <h1>
+        DDHQ Coding Exercise
+      </h1>
+      <div className="App-content">
+        <TextBlock/>
+      </div>
+    </>
     );
 }

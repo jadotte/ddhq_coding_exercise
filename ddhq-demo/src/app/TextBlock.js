@@ -18,7 +18,6 @@ class TextBlock extends React.Component {
     this.setState({ text_input: event.target.value });
   }
   async handle_submit() {
-    alert("Text submitted.");
     let input = this.state.text_input.trim();
     if (!input) {
       this.setState({ error: "No prompt given."})
@@ -46,7 +45,7 @@ class TextBlock extends React.Component {
   render () {
     let {text_input, image_url, loading, err} = this.state;
     return (
-    <div>
+    <div className="App-content">
         <textarea
         variant="outlined"
         color = "black"
@@ -54,8 +53,14 @@ class TextBlock extends React.Component {
         onChange={this.handle_change}
         placeholder="Input here"
         rows='10'
-        cols='50'
-        style={{display: 'block', marginBottom: '10px', padding: '8px', fontSize:'16px'}}
+        style={{
+            display: 'block',
+            marginBottom: '10px',
+            padding: '8px',
+            fontSize:'16px',
+            maxWidth: '800px',
+            width: "100%",
+          }}
         />
         <button onClick={this.handle_submit} disabled = {loading}>
         {loading ? "Loading" : "Submit"}
@@ -67,7 +72,11 @@ class TextBlock extends React.Component {
             <img
             src={image_url}
             alt="Histogram"
-            style={{maxWidth: '800px', display: 'block'}}
+            style={{
+                maxWidth: '800px',
+                display: 'block',
+                width: "100%",
+              }}
             />
           </div>
         )}

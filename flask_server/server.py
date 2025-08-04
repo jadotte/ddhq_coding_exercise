@@ -1,7 +1,5 @@
 from flask import Flask, Response, request
 from hist import plot_histogram, get_bigrams
-import pandas as pd
-import collections
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -10,69 +8,10 @@ CORS(app)
 
 @app.route("/test", methods=["POST"])
 def test():
-    put = """Oh, great intentions, I've got the best of interventions
-    But when the ads come, I think about it now
-    In my infliction, entrepreneurial conditions
-    Take us to glory, I think about it now
-    Cannot conversations cull united nations?
-    If you got the patience, celebrate the ancients
-    Cannot all creation call it celebration?
-    Or united nation, put it to your head
-    Oh, great White City, I've got the adequate committee
-    Where have your walls gone? I think about it now
-    Chicago, in fashion
-    The soft drinks, expansion, oh, Columbia
-    From Paris, incentive
-    Like Cream of Wheat invented, the Ferris Wheel
-    Oh, great intentions, covenant with the imitation
-    Have you no conscience? I think about it now
-    Oh, God of Progress, have you degraded or forgot us?
-    Where have your laws gone? I think about it now
-    Ancient hieroglyphic, or the South Pacific
-    Typically terrific, busy and prolific
-    Classical devotion, architect promotion
-    Lacking in emotion, think about it now
-    Chicago, the New Age
-    But, what would Frank Lloyd Wright say? "Oh, Columbia!"
-    Amusement, or treasure
-    These optimistic pleasures, like the Ferris Wheel
-    Cannot conversations cull united nations?
-    If you got the patience, celebrate the ancients
-    Columbia!
-    I cried myself to sleep last night
-    And the ghost of Carl, he approached my window
-    I was hypnotized, I was asked to improvise
-    On the attitude, the regret of a thousand centuries of death
-    Even with the heart of terror and the superstitious wearer
-    I am writing all alone, I am writing all alone
-    Even in my best condition, counting all the superstition
-    I am riding all alone, I am running all alone
-    And we laughed at the beatitudes of a thousand lines
-    We were asked at the attitudes, they reminded us of death
-    Even with the rest belated, everything is antiquated
-    Are you writing from the heart?
-    Are you writing from the heart?
-    Even in his heart, the Devil has to know the water level
-    Are you writing from the heart?
-    Are you writing from the heart?
-    And I cried myself to sleep last night
-    For the Earth and materials, they may sound just right to me
-    Even with the rest belated, everything is antiquated
-    Are you writing from the heart?
-    Are you writing from the heart?
-    Even in his heart, the Devil has to know the water level
-    Are you writing from the heart?
-    Are you writing from the heart?
-    """
     data = request.get_json()
     put = data["text_input"]
     buf = plot_histogram(get_bigrams(put))
     return Response(buf.getvalue(), mimetype="image/png")
-
-
-@app.route("/members")
-def members():
-    return {"members": ["Member1", "Member2", "Member3"]}
 
 
 if __name__ == "__main__":

@@ -5,7 +5,7 @@ Here's my coding exercise submission. This is a simple page with a text area and
 Both the frontend and backend can be run locally by entering the following commands from the ddhq_exercise_jadotte directory.
 
 Flask Python backend run
-> python3 flask_server/server.p
+> python3 flask_server/server.py
 
 While the backend is running from another terminal pane run React frontend using:
 > npm run --prefix ./ddhq-demo dev

@@ -1,6 +1,4 @@
 import pandas as pd
-import numpy as np
-import collections
 import matplotlib
 
 matplotlib.use("Agg")
@@ -17,7 +15,7 @@ def get_bigrams(text: str) -> pd.DataFrame:
     text = text.translate(str.maketrans("", "", string.punctuation))
     words = text.lower().split()
     if len(words) < 2:
-        return {}
+        return pd.DataFrame()
     bigrams = {}
     for i, w in enumerate(words[:-1]):
         curr = ",\n".join(sorted([w, words[i + 1]]))
@@ -33,9 +31,9 @@ def plot_histogram(bigrams: pd.DataFrame, breadth=20):
     """
     buf = io.BytesIO()
     plt.figure(figsize=(20, 12))
-    sns.set(font_scale=1.5)
+    sns.set_theme(font_scale=1.8)
     sns.barplot(data=bigrams.head(breadth), y="Frequency", x="Bigram")
-    plt.title("Bigram Histogram", fontsize=40)
+    plt.title("Bigram Table", fontsize=40)
     plt.xlabel("Frequency", fontsize=32)
     plt.ylabel("Bigram", fontsize=32)
     plt.tight_layout()
